@@ -1,6 +1,6 @@
 // ULTRASONIC PIN config
-static int PIN_ULTRASONIC_TRIGGER = 8;
-static int PIN_ULTRASONIC_ECHO = 9;
+static int PIN_ULTRASONIC_TRIGGER = 13;
+static int PIN_ULTRASONIC_ECHO = 12;
 
 
 // ULTRASONIC control

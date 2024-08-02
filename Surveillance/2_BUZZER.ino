@@ -1,9 +1,11 @@
 // BUZZER PIN config
-static const int PIN_BUZZER = 8;
+static const int PIN_BUZZER = 3;
 
 // BUZZER config
-static const int DURATION_BUZZER_TONE = 200;
-static const int FREQUENCY_BUZZER_TONE = 500;
+static const int DURATION_BUZZER_TONE = 10;
+static const int FREQUENCY_BUZZER_TONE_NOTIFICATION = 100;
+static const int FREQUENCY_BUZZER_TONE_WARNING = 500;
+static const int FREQUENCY_BUZZER_TONE_CRITICAL = 1000;
 
 // BUZZER control
 void setup_buzzer(){
@@ -12,17 +14,13 @@ void setup_buzzer(){
 }
 
 void play_notification(){
-  tone(PIN_BUZZER, FREQUENCY_BUZZER_TONE, DURATION_BUZZER_TONE);
+  tone(PIN_BUZZER, FREQUENCY_BUZZER_TONE_NOTIFICATION, DURATION_BUZZER_TONE);
 }
 
 void play_warning(){
-  play_notification();
-  delay(100);
-  play_notification();
+  tone(PIN_BUZZER, FREQUENCY_BUZZER_TONE_WARNING, DURATION_BUZZER_TONE);
 }
 
 void play_critical(){
-  play_warning();
-  delay(100);
-  play_warning();
+  tone(PIN_BUZZER, FREQUENCY_BUZZER_TONE_CRITICAL, DURATION_BUZZER_TONE);
 }
